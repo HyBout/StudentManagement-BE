@@ -5,7 +5,6 @@ const cors = require('cors')
 
 
 //config
-let port = process.env.PORT || 3000
 let routesPath = './api/routes/'
 
 //body
@@ -27,9 +26,4 @@ fs.readdirSync(routesPath).forEach(E => {
 })
 
 
-app.listen(process.env.port || 3000, 'localhost')
-
-
-
-console.log('Server listening on port: ' + port)
-
+app.listen(process.env.PORT, console.log('Server listening on port: ' + process.env.PORT))
