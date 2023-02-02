@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const fs = require('fs')
+const cors = require("cors");
 
 
 //config
@@ -11,6 +12,7 @@ let routesPath = './api/routes/'
 let app = express()
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(cors());
 
 fs.readdirSync(routesPath).forEach(E => {
   try {
